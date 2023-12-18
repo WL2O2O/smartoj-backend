@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.annotation.*;
 import java.io.Serializable;
 import java.util.Date;
 import lombok.Data;
+import org.springframework.stereotype.Component;
 
 /**
  * 题目表
@@ -12,6 +13,7 @@ import lombok.Data;
  */
 @TableName(value ="question")
 @Data
+@Component
 public class Question implements Serializable {
     /**
      * 题目id

@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.wl2o2o.smartoj.common.ErrorCode;
 import com.wl2o2o.smartoj.constant.CommonConstant;
 import com.wl2o2o.smartoj.exception.BusinessException;
+import com.wl2o2o.smartoj.judge.JudgeService;
 import com.wl2o2o.smartoj.model.dto.question.QuestionQueryRequest;
 import com.wl2o2o.smartoj.model.dto.questionsubmit.QuestionSubmitAddRequest;
 import com.wl2o2o.smartoj.model.dto.questionsubmit.QuestionSubmitQueryRequest;
@@ -28,6 +29,7 @@ import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.aop.framework.AopContext;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -36,6 +38,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
 
 /**
@@ -47,6 +50,11 @@ public class QuestionSubmitServiceImpl extends ServiceImpl<QuestionSubmitMapper,
 
     @Resource
     private QuestionService questionService;
+
+    @Resource
+    @Lazy
+    private JudgeService judgeService;
+
 
     @Resource
     private UserService userService;
@@ -87,7 +95,13 @@ public class QuestionSubmitServiceImpl extends ServiceImpl<QuestionSubmitMapper,
         if (!save) {
             throw new BusinessException(ErrorCode.SYSTEM_ERROR, "数据插入失败");
         }
-        return questionSubmit.getId();
+        // 执行判题相关的业务
+        Long questionSubmitId = questionSubmit.getId();
+        CompletableFuture.runAsync(()->{
+            judgeService.doJudge(questionSubmitId);
+        });
+
+        return questionSubmitId;
         // 每个用户串行题目提交
         // // 锁必须要包裹住事务方法
         // QuestionSubmitService questionSubmitService = (QuestionSubmitService) AopContext.currentProxy();
