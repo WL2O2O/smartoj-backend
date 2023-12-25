@@ -1,6 +1,5 @@
 package com.wl2o2o.smartoj.judge.codesandbox.model;
 
-import com.wl2o2o.smartoj.model.dto.questionsubmit.JudgeInfo;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

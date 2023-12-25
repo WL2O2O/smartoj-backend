@@ -1,4 +1,4 @@
-package com.wl2o2o.smartoj.model.dto.questionsubmit;
+package com.wl2o2o.smartoj.judge.codesandbox.model;
 
 import lombok.Data;
 

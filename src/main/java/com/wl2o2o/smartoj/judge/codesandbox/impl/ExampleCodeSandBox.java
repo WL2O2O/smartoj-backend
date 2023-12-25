@@ -3,9 +3,8 @@ package com.wl2o2o.smartoj.judge.codesandbox.impl;
 import com.wl2o2o.smartoj.judge.codesandbox.CodeSandBox;
 import com.wl2o2o.smartoj.judge.codesandbox.model.ExecuteCodeRequest;
 import com.wl2o2o.smartoj.judge.codesandbox.model.ExecuteCodeResponse;
-import com.wl2o2o.smartoj.model.dto.questionsubmit.JudgeInfo;
+import com.wl2o2o.smartoj.judge.codesandbox.model.JudgeInfo;
 import com.wl2o2o.smartoj.model.enums.JudgeInfoMessageEnum;
-import com.wl2o2o.smartoj.model.enums.QuestionSubmitLanguageEnum;
 import com.wl2o2o.smartoj.model.enums.QuestionSubmitStatusEnum;
 import lombok.extern.slf4j.Slf4j;
 

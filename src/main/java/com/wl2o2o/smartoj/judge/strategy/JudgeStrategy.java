@@ -1,6 +1,6 @@
 package com.wl2o2o.smartoj.judge.strategy;
 
-import com.wl2o2o.smartoj.model.dto.questionsubmit.JudgeInfo;
+import com.wl2o2o.smartoj.judge.codesandbox.model.JudgeInfo;
 /**
  * 判题策略
  * @author WL2O2O

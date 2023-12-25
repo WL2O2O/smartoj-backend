@@ -2,7 +2,7 @@ package com.wl2o2o.smartoj.model.vo;
 
 import cn.hutool.json.JSONUtil;
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.wl2o2o.smartoj.model.dto.questionsubmit.JudgeInfo;
+import com.wl2o2o.smartoj.judge.codesandbox.model.JudgeInfo;
 import com.wl2o2o.smartoj.model.entity.QuestionSubmit;
 import lombok.Data;
 import org.springframework.beans.BeanUtils;

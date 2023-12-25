@@ -4,7 +4,7 @@ import com.wl2o2o.smartoj.judge.strategy.DefaultJudgeStrategy;
 import com.wl2o2o.smartoj.judge.strategy.JavaLanguageJudgeStrategy;
 import com.wl2o2o.smartoj.judge.strategy.JudgeContext;
 import com.wl2o2o.smartoj.judge.strategy.JudgeStrategy;
-import com.wl2o2o.smartoj.model.dto.questionsubmit.JudgeInfo;
+import com.wl2o2o.smartoj.judge.codesandbox.model.JudgeInfo;
 import com.wl2o2o.smartoj.model.entity.QuestionSubmit;
 import org.springframework.stereotype.Service;
 

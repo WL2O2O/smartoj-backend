@@ -3,7 +3,7 @@ package com.wl2o2o.smartoj.judge.strategy;
 import cn.hutool.json.JSONUtil;
 import com.wl2o2o.smartoj.model.dto.question.JudgeCase;
 import com.wl2o2o.smartoj.model.dto.question.JudgeConfig;
-import com.wl2o2o.smartoj.model.dto.questionsubmit.JudgeInfo;
+import com.wl2o2o.smartoj.judge.codesandbox.model.JudgeInfo;
 import com.wl2o2o.smartoj.model.entity.Question;
 import com.wl2o2o.smartoj.model.enums.JudgeInfoMessageEnum;
 
