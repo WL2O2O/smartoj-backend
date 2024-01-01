@@ -34,6 +34,7 @@ import javax.servlet.http.HttpServletRequest;
 @RestController
 @RequestMapping("/question_submit")
 @Slf4j
+@Deprecated
 public class QuestionSubmitController {
 
     @Resource
@@ -69,7 +70,7 @@ public class QuestionSubmitController {
      * @return
      */
     @PostMapping("/list/page")
-    public BaseResponse<Page<QuestionSubmitVO>> listQuestionByPage(@RequestBody QuestionSubmitQueryRequest questionSubmitQueryRequest,
+    public BaseResponse<Page<QuestionSubmitVO>> listQuestionSubmitByPage(@RequestBody QuestionSubmitQueryRequest questionSubmitQueryRequest,
                                                                    HttpServletRequest request) {
         long current = questionSubmitQueryRequest.getCurrent();
         long size = questionSubmitQueryRequest.getPageSize();
