@@ -62,10 +62,16 @@ class CodeSandBoxTest {
     void executeCodeByProxy() {
         // 创建示例代码沙箱的测试类对象
         CodeSandBox codeSandBox = CodeSandBoxFactory.newInstance(type);
-        CodeSandBoxProxy codeSandBoxProxy = new CodeSandBoxProxy(codeSandBox);
+        codeSandBox = new CodeSandBoxProxy(codeSandBox);
 
         // 模拟数据值
-        String code = "int main() {}";
+        String code = "public class Main {\n" +
+                "    public static void main(String[] args) {\n" +
+                "        int a = Integer.parseInt(args[0]);\n" +
+                "        int b = Integer.parseInt(args[1]);\n" +
+                "        System.out.println(\"结果：\" + (a + b));\n" +
+                "    }\n" +
+                "}";
         String language = QuestionSubmitLanguageEnum.JAVA.getValue();
         List<String> inputList = Arrays.asList("1 2","3 4");
         ExecuteCodeRequest executeCodeRequest = ExecuteCodeRequest.builder()
@@ -73,7 +79,7 @@ class CodeSandBoxTest {
                 .language(language)
                 .inputList(inputList)
                 .build();
-        ExecuteCodeResponse executeCodeResponse = codeSandBoxProxy.executeCode(executeCodeRequest);
+        ExecuteCodeResponse executeCodeResponse = codeSandBox.executeCode(executeCodeRequest);
         Assertions.assertNotNull(executeCodeResponse);
     }
 

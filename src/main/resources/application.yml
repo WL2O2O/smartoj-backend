@@ -93,4 +93,4 @@ cos:
 
 # 代码沙箱
 codesandbox:
-  type: example
+  type: remote
