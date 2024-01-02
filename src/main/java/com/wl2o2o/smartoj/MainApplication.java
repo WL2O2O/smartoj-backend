@@ -13,8 +13,9 @@ import org.springframework.scheduling.annotation.EnableScheduling;
  * @author <a href="https://github.com/wl2o2o">程序员CSGUIDER</a>
  * @from <a href="https://wl2o2o.github.io">CSGUIDER博客</a>
  */
-// todo 如需开启 Redis，须移除 exclude 中的内容
-@SpringBootApplication(exclude = {RedisAutoConfiguration.class})
+// TODO 如需开启 Redis，须移除 exclude 中的内容
+// @SpringBootApplication(exclude = {RedisAutoConfiguration.class})
+@SpringBootApplication
 @MapperScan("com.wl2o2o.smartoj.mapper")
 @EnableScheduling
 @EnableAspectJAutoProxy(proxyTargetClass = true, exposeProxy = true)

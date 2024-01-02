@@ -42,7 +42,7 @@ public interface QuestionService extends IService<Question> {
     /**
      * 分页获取题目封装
      *
-     * @param questionPage
+     * @param questionSubmitPage
      * @param request
      * @return
      */

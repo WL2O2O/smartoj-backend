@@ -26,9 +26,9 @@ CREATE TABLE if not exists user (
 ) comment '用户表'  collate = utf8mb4_unicode_ci;
 
 
-# 字段：
-# 题目相关：id、标题、内容、标签、答案、提交数量、通过数量、通关率（扩展）；
-# 判题相关：判题用例（judgeCase / json）、判题限制（judgeConfig / json）、判题类型（扩展）；
+-- 字段：
+-- 题目相关：id、标题、内容、标签、答案、提交数量、通过数量、通关率（扩展）；
+-- 判题相关：判题用例（judgeCase / json）、判题限制（judgeConfig / json）、判题类型（扩展）；
 -- 题目表
 CREATE TABLE if not exists question (
   id        	     bigint        	  auto_increment                         comment '题目id'     primary key,
@@ -50,7 +50,7 @@ CREATE TABLE if not exists question (
 ) comment '题目表'  collate = utf8mb4_unicode_ci;
 
 
-# 字段：用户id、题目id、语言、代码、判题状态、判题信息（judgeInfo / json）;
+-- 字段：用户id、题目id、语言、代码、判题状态、判题信息（judgeInfo / json）;
 -- 题目提交表
 CREATE TABLE if not exists question_submit (
   id                bigint          auto_increment                           comment 'id'		primary key,
