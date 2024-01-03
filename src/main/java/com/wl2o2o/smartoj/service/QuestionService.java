@@ -10,7 +10,10 @@ import com.wl2o2o.smartoj.model.vo.QuestionVO;
 import javax.servlet.http.HttpServletRequest;
 
 /**
+ * 针对表 question 的数据库操作 service
  *
+ * @author WL2O2O
+ * @create 2023/12/18 19:47
  */
 public interface QuestionService extends IService<Question> {
     /**
